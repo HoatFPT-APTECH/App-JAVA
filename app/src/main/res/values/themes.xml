@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyQR" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+
+        <!-- Customize your theme here. -->
+
+        <item name="android:textColorPrimary">#670A0A</item>
+    </style>
+</resources>
