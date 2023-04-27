@@ -48,7 +48,7 @@ public class QR_Image_Activity extends AppCompatActivity {
     }
     private void setResultData(){
       Intent intent= new Intent();
-      intent.putExtra("olgText",txtshow.getText().toString());
+      intent.putExtra("oldText",txtshow.getText().toString());
       setResult(RESULT_OK,intent);
     }
 }
