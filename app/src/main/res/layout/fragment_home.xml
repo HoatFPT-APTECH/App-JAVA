@@ -30,7 +30,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="Generate Options"
         android:textSize="18dp"
-        android:textColor="@color/red"
+        android:textColor="@color/secondColor"
         android:paddingLeft="10dp"
  />
     <Button

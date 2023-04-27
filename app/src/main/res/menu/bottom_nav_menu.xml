@@ -29,4 +29,5 @@
         android:icon="@drawable/ic_setting_foreground"
 
         android:title="Setting" />
+
 </menu>

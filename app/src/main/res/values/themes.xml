@@ -1,13 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyQR" parent="Theme.AppCompat.NoActionBar">
+    <style name="Theme.MyQR" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
 
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@color/black</item>
+        <item name="android:windowBackground">@color/gray</item>
 
-        <item name="colorAccent">@color/red</item>
-   <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorAccent">@color/secondColor</item>
+        <item name="android:textColorPrimary">@color/white</item>
 
     </style>
 
