@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,11 +23,10 @@
         <activity
             android:name=".ui.home.Text_To_QR_Activity"
             android:exported="false" />
-        <activity
-            android:name=".ui.scan.TextToQRActivity"
-            android:exported="false"
-            android:label="Generate QR"
-            android:theme="@style/Theme.MyQR" />
+        <activity android:name=".qrscanner.Activity.MainQRSCanerActivity" android:exported="false"/>
+        <activity android:name=".qrscanner.Activity.HistoryActivity" android:exported="false"/>
+        <activity android:name=".qrscanner.Activity.LaunchScreenActivity" android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -8,4 +8,7 @@
     <string name="title_activity_text_qractivity">TextQRActivity</string>
     <string name="title_activity_text_to_qractivity">TextToQRActivity</string>
     <string name="title_activity_test">TestActivity</string>
+    // qr scaner
+
+    <string name="qr_hint">Hover to QR-code</string>
 </resources>

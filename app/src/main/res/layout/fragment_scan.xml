@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.scan.ScanFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+        <Button
+            app:layout_constraintTop_toTopOf="@+id/content_frame"
+            app:layout_constraintLeft_toLeftOf="@+id/content_frame"
+            android:id="@+id/lightButton"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/ic_flash_on"
+            android:clickable="true"
+
+            android:onClick="mainActivityOnClickEvents"
+            android:scaleType="centerCrop" />
+
+
+        <Button
+            app:layout_constraintTop_toTopOf="@+id/content_frame"
+            app:layout_constraintRight_toRightOf="@+id/content_frame"
+
+            android:id="@+id/historyButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/ic_history"
+            android:clickable="true"
+            android:onClick="mainActivityOnClickEvents"
+            android:scaleType="centerCrop" />
+
+
+    <include layout="@layout/long_item_divider_without_margin"/>
+
+    <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Scan page" />
-
-</FrameLayout>
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_gravity="center" />
+</androidx.constraintlayout.widget.ConstraintLayout>
