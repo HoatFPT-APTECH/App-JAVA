@@ -31,13 +31,24 @@
         tools:srcCompat="@mipmap/img_demo_qr_foreground" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/drw_button_generate"
         android:text="Save"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/drw_button_generate"
+        android:text="Share"
         app:layout_constraintLeft_toLeftOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

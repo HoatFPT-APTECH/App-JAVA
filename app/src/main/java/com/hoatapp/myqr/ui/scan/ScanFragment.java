@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.icu.util.Calendar;
 import android.net.Uri;
 import android.os.Bundle;
@@ -106,9 +107,7 @@ public class ScanFragment extends Fragment  implements ActivityCompat.OnRequestP
                              Bundle savedInstanceState) {
           View view=inflater.inflate(R.layout.fragment_scan,container,false);
         ButterKnife.bind(this,view);
-        ActivityCompat.requestPermissions(requireActivity(),
-                new String[]{Manifest.permission.CAMERA},
-                1);
+
 
         ViewGroup contentFrame = (ViewGroup) view.findViewById(R.id.content_frame);
         mScannerView = new ZXingScannerView(requireContext());
@@ -249,20 +248,7 @@ public void onResume() {
         dialog.show();
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                } else {
-                    Toast.makeText(requireContext(), "Permission denied to camera", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-        }
-    }
+
 
 
 }
