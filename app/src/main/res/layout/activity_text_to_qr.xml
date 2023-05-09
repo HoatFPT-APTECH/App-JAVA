@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -22,27 +23,27 @@
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="200dp"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/rounded_button"
         android:ems="10"
-        android:inputType="text"
-        android:hint="Insert text"
-        android:padding="5dp"
         android:gravity="left|top"
-        android:layout_margin="10dp"
+        android:hint="Insert text"
+        android:inputType="text"
+        android:minHeight="200dp"
+        android:padding="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="336dp"
-        android:text="Generate"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/drw_button_generate"
+        android:text="Generate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

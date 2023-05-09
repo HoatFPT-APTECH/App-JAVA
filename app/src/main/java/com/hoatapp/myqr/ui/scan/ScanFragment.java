@@ -132,12 +132,12 @@ void mainActivityOnClickEvents(View v) {
     }
     else if( v.getId()==R.id.lightButton){
         if(flashState==false) {
-            v.setBackgroundResource(R.drawable.ic_flash_off);
+            v.setBackgroundResource(R.drawable.ic_flash_off_foreground);
             Toast.makeText(requireContext(), "Flashlight turned on", Toast.LENGTH_SHORT).show();
             mScannerView.setFlash(true);
             flashState = true;
         }else if(flashState) {
-            v.setBackgroundResource(R.drawable.ic_flash_on);
+            v.setBackgroundResource(R.drawable.ic_flash_on_foreground);
             Toast.makeText(requireContext(), "Flashlight turned off", Toast.LENGTH_SHORT).show();
             mScannerView.setFlash(false);
             flashState = false;

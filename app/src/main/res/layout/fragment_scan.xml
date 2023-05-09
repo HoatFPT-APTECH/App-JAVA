@@ -9,38 +9,6 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-        <Button
-            app:layout_constraintTop_toTopOf="@+id/content_frame"
-            app:layout_constraintLeft_toLeftOf="@+id/content_frame"
-            android:id="@+id/lightButton"
-            android:layout_width="51dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/ic_flash_on"
-            android:clickable="true"
-
-            android:onClick="mainActivityOnClickEvents"
-            android:scaleType="centerCrop" />
-
-
-        <Button
-            app:layout_constraintTop_toTopOf="@+id/content_frame"
-            app:layout_constraintRight_toRightOf="@+id/content_frame"
-
-            android:id="@+id/historyButton"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/ic_history"
-            android:clickable="true"
-            android:onClick="mainActivityOnClickEvents"
-            android:scaleType="centerCrop" />
 
 
     <include layout="@layout/long_item_divider_without_margin"/>
@@ -49,7 +17,36 @@
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:layout_gravity="center" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="222dp">
+
+        <Button
+            android:id="@+id/lightButton"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+
+
+            android:background="@drawable/ic_flash_off_foreground"
+            android:clickable="true"
+            android:onClick="mainActivityOnClickEvents"
+            android:scaleType="centerCrop"
+             android:layout_gravity="top|left"
+            />
+
+        <Button
+            android:id="@+id/historyButton"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/ic_history_foreground"
+            android:clickable="true"
+          android:layout_gravity="right|top"
+
+            android:onClick="mainActivityOnClickEvents"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

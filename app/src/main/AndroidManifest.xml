@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.FLASHLIGHT"/>
 
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
 
     <application
         android:allowBackup="true"
@@ -17,21 +18,47 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/logo_app"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/logo_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyQR"
-        tools:targetApi="31"
-        android:requestLegacyExternalStorage="true">
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.home.ZaloActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.FacebookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.YoutubeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.All_for_Web_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.Card_QR_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.MyQr_Image_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.My_to_QR_Activity"
+            android:exported="false" />
         <activity
             android:name=".ui.home.QR_Image_Activity"
             android:exported="false" />
         <activity
             android:name=".ui.home.Text_To_QR_Activity"
             android:exported="false" />
-        <activity android:name=".qrscanner.Activity.MainQRSCanerActivity" android:exported="false"/>
-        <activity android:name=".qrscanner.Activity.HistoryActivity" android:exported="false"/>
-        <activity android:name=".qrscanner.Activity.LaunchScreenActivity" android:exported="false"/>
-
+        <activity
+            android:name=".qrscanner.Activity.MainQRSCanerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".qrscanner.Activity.HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".qrscanner.Activity.LaunchScreenActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -42,19 +69,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.hoatapp.myqr.fileprovider"
             android:grantUriPermissions="true"
-            android:requestLegacyExternalStorage="true"
-            >
+            android:requestLegacyExternalStorage="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-
-
     </application>
 
 </manifest>

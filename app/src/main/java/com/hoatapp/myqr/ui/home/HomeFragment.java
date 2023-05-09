@@ -17,6 +17,8 @@ import com.hoatapp.myqr.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
     public Button genText;
+    public Button genMyqr;
+    Button genWebsite,genYoutube,genFacebook,genZalo;
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,6 +31,11 @@ public class HomeFragment extends Fragment {
 
        //lay du lieu tu layout
        genText= root.findViewById(R.id.gen_text);
+       genMyqr=root.findViewById(R.id.my_qr);
+       genWebsite=root.findViewById(R.id.website);
+       genFacebook=root.findViewById(R.id.facbook);
+       genYoutube=root.findViewById(R.id.youtube);
+       genZalo=root.findViewById(R.id.zalo);
         return root;
     }
     public void onResume(){
@@ -39,6 +46,41 @@ public class HomeFragment extends Fragment {
                 Intent textbdn= new Intent();
                 textbdn.setClass(v.getContext(),Text_To_QR_Activity.class);
                 startActivity(textbdn);
+            }
+        });
+        genMyqr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(),My_to_QR_Activity.class);
+                startActivity(intent);
+            }
+        });
+        genWebsite.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(),All_for_Web_Activity.class);
+                startActivity(intent);
+            }
+        });
+        genZalo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(),ZaloActivity.class);
+                startActivity(intent);
+            }
+        });
+        genFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(),FacebookActivity.class);
+                startActivity(intent);
+            }
+        });
+        genYoutube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(),YoutubeActivity.class);
+                startActivity(intent);
             }
         });
     }
