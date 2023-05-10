@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.account.AccountFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Account Page" />
+        android:id="@+id/title_Account"
 
-</FrameLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="My Account "
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        />
+    <ImageView
+
+        android:id="@+id/imageView2"
+        android:layout_width="105dp"
+        android:layout_height="104dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="69dp"
+        android:src="@mipmap/myimage" />
+    <!-- Thông tin Tên -->
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_marginTop="10dp"
+         android:layout_height="wrap_content"
+         android:text="Mai Huy Hoạt"
+         android:textSize="25dp"
+         android:gravity="center"
+         android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="User name: "
+        android:drawableLeft="@drawable/ic_account_small"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:drawablePadding="10dp"
+        android:layout_marginLeft="50dp"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="225dp" />
+
+    <TextView
+        android:id="@+id/edtNameWebstie"
+        android:layout_width="318dp"
+        android:minHeight="45dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        android:paddingLeft="10dp"
+        android:gravity="center|left"
+
+        android:textSize="18dp"
+        android:text="hoatdfk2001@gmail.com"
+        android:layout_marginTop="10dp"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="Password: "
+        android:drawableLeft="@drawable/ic_linkwebsite_foreground"
+        android:textSize="18dp"
+        android:drawablePadding="10dp"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <TextView
+        android:id="@+id/edtLinkwebsite"
+        android:layout_width="312dp"
+        android:minHeight="45dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:ems="10"
+        android:inputType="text"
+        android:gravity="center|left"
+
+        android:textSize="18dp"
+
+        android:paddingLeft="10dp"
+       android:text="*******"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="361dp" />
+</LinearLayout>
+
+
+
+

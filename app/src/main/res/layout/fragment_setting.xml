@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".ui.setting.SettingFragment">
+<TextView
+    android:id="@+id/title_Account"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.setting.SettingFragment">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:text="Settings "
+    android:textColor="@color/white"
+    android:textSize="20dp"
 
-    <!-- TODO: Update blank fragment layout -->
+    android:textStyle="bold"
+
+    />
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Setting page" />
 
-</FrameLayout>
+        android:id="@+id/title_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold"
+        android:text="Generate Options"
+        android:textSize="18dp"
+        android:textColor="@color/secondColor"
+        android:paddingLeft="10dp"
+        />
+    <TextView
+        android:background="@drawable/rounded_button"
+        android:layout_width="match_parent"
+        android:text="Language"
+        android:textSize="18dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:drawableRight="@drawable/ic_arrow_dow_foreground"
+
+        android:drawablePadding="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_button"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:paddingBottom="10dp"
+
+            android:textSize="18dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:textStyle="bold"
+            android:text="Keep Awake"/>
+        <CheckBox
+            android:gravity="right|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:buttonTint="@color/secondColor"
+            android:layout_marginLeft="262dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_button"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:paddingBottom="10dp"
+
+            android:textSize="18dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:textStyle="bold"
+            android:text="Add scan to history"/>
+        <CheckBox
+            android:gravity="right|center"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/secondColor"
+            android:layout_marginLeft="210dp"
+            />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
