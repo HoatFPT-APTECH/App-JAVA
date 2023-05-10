@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,10 +42,11 @@ public class HistoryActivity extends AppCompatActivity implements SwipeRefreshLa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
        ButterKnife.bind(this);
-         historySwipeRefreshLayout=findViewById(R.id.historyRecyclerView);
+         historySwipeRefreshLayout=findViewById(R.id.historySwipeRefreshLayout);
          historyRecyclerView=findViewById(R.id.historyRecyclerView);
         historySwipeRefreshLayout.setOnRefreshListener(this);
-
+        ActionBar actionBar= getSupportActionBar();
+        actionBar.hide();
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         historyRecyclerView.setLayoutManager(layoutManager);
         getData();
@@ -69,7 +71,7 @@ public class HistoryActivity extends AppCompatActivity implements SwipeRefreshLa
     }
 
     @OnClick()
-    void historyOnClickEvents(View v) {
+   public void historyOnClickEvents(View v) {
         if(v.getId()==R.id.backButton)finish();
         else if (v.getId()==R.id.clearButton) {
             h.clearAll(getApplicationContext());

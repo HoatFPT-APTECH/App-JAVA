@@ -51,9 +51,6 @@
             android:name=".ui.home.Text_To_QR_Activity"
             android:exported="false" />
         <activity
-            android:name=".qrscanner.Activity.MainQRSCanerActivity"
-            android:exported="false" />
-        <activity
             android:name=".qrscanner.Activity.HistoryActivity"
             android:exported="false" />
         <activity

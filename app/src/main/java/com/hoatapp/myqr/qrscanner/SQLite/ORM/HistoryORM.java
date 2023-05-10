@@ -41,7 +41,7 @@ public class HistoryORM implements InterfaceORM<History> {
     @Override
     public History cursorToObject(Cursor cursor) {
         History h = new History();
-        h.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
+        h.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID) ));
         h.setDate(cursor.getString(cursor.getColumnIndex(COLUMN_DATE)));
         h.setContext(cursor.getString(cursor.getColumnIndex(COLUMN_CONTEXT)));
         return h;

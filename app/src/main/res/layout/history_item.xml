@@ -6,21 +6,24 @@
     android:layout_marginRight="5dp"
     android:layout_marginTop="5dp"
     android:clickable="true"
+
     android:focusable="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_margin="15dp"
+        android:padding="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:background="@color/secondColor"
         android:layout_height="wrap_content">
 
         <com.hoatapp.myqr.qrscanner.CustomWidgets.CustomTextView
             android:id="@+id/contextTextView"
             android:textStyle="bold"
             android:textSize="17sp"
-            android:textColor="@color/orange"
+            android:textColor="@color/white"
+
             android:text="1. 72623499240"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -61,6 +64,7 @@
                 android:id="@+id/searchImageView"
                 android:clickable="true"
                 android:src="@drawable/ic_search"
+                app:tint="@color/white"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -69,6 +73,7 @@
                 android:id="@+id/copyImageView"
                 android:clickable="true"
                 android:src="@drawable/ic_copy"
+                app:tint="@color/white"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -78,6 +83,7 @@
                 android:clickable="true"
                 android:src="@drawable/ic_share"
                 android:layout_weight="1"
+                app:tint="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

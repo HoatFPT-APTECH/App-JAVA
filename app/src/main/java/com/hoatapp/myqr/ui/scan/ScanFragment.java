@@ -1,15 +1,11 @@
 package com.hoatapp.myqr.ui.scan;
 
-import android.Manifest;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.icu.util.Calendar;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,7 +13,6 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -25,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,9 +31,12 @@ import com.hoatapp.myqr.qrscanner.Entity.History;
 import com.hoatapp.myqr.qrscanner.SQLite.ORM.HistoryORM;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-import com.hoatapp.myqr.qrscanner.Activity.MainQRSCanerActivity;
+import com.google.android.gms.vision.CameraSource;
+
+
+
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ScanFragment#newInstance} factory method to
@@ -50,14 +47,13 @@ import com.hoatapp.myqr.qrscanner.Activity.MainQRSCanerActivity;
 public class ScanFragment extends Fragment  implements ActivityCompat.OnRequestPermissionsResultCallback, ZXingScannerView.ResultHandler {
     ImageView flashImageView;
     Button btnHistory;
-    Button btnFlash;
+    Button btnFlash ,btnSwitchCamera;
     //Variables
     Intent i;
     HistoryORM h = new HistoryORM();
     private ZXingScannerView mScannerView;
     private boolean flashState = false;
 
-    private MainQRSCanerActivity mainQRSCanerActivity;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,11 +63,7 @@ public class ScanFragment extends Fragment  implements ActivityCompat.OnRequestP
     private String mParam1;
     private String mParam2;
 
-    public ScanFragment() {
-        // Required empty public constructor
-        this.mainQRSCanerActivity= new MainQRSCanerActivity();
 
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -121,6 +113,7 @@ public class ScanFragment extends Fragment  implements ActivityCompat.OnRequestP
            // gan du lieu cho btn flash and history
         btnFlash= view.findViewById(R.id.lightButton);
         btnHistory=view.findViewById(R.id.historyButton);
+        btnSwitchCamera=view.findViewById(R.id.switchCamera);
         return view;
 
     }
@@ -145,6 +138,20 @@ void mainActivityOnClickEvents(View v) {
     }
 
 }
+
+    private int cameraId = CameraSource.CAMERA_FACING_BACK; // Mặc định là camera sau
+
+    // Hàm này được gọi khi người dùng nhấn nút để chuyển đổi camera
+    public void switchCamera() {
+        if (cameraId == CameraSource.CAMERA_FACING_BACK) {
+            cameraId = CameraSource.CAMERA_FACING_FRONT;
+        } else {
+            cameraId = CameraSource.CAMERA_FACING_BACK;
+        }
+        mScannerView.stopCamera();
+
+        mScannerView.startCamera(cameraId);
+    }
 @Override
 public void onResume() {
     super.onResume();
@@ -161,6 +168,12 @@ public void onResume() {
         @Override
         public void onClick(View v) {
             mainActivityOnClickEvents(v);
+        }
+    });
+    btnSwitchCamera.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switchCamera();
         }
     });
 
